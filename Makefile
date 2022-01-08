@@ -34,10 +34,11 @@ validate:  ## Prepare env dev
 	php bin/console doctrine:s:v --env=dev
 
 prepare-dev:  ## Prepare env dev
-	php bin/console cache:clear --env=dev
-	php bin/console doctrine:database:create --if-not-exists --env=dev
-	php bin/console doctrine:schema:update -f --env=dev
-
+	symfony console  cache:clear --env=dev
+	symfony console  doctrine:database:create --if-not-exists --env=dev
+	symfony console  doctrine:schema:update -f --env=dev
+update-db: ## update db
+	symfony console doctrine:schema:update --force --env=dev
 dump-sql-dev:
 	php bin/console doctrine:schema:update --env=dev --dump-sql
 
