@@ -20,6 +20,14 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
             - '../src/Tests/'
-
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    Aws\S3\S3Client:
+        arguments:
+            - 
+                version: 'latest'
+                region: '%env(string:AWS_REGION)%'
+                endpoint: '%env(string:AWS_ENDPOINT)%'
+                credentials:
+                    key: '%env(string:AWS_CREDENTIALS_KEY)%'
+                    secret: '%env(AWS_CREDENTIALS_SECRET)%'
+                S3:
+                    version: "2006-03-01"

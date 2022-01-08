@@ -1,10 +1,11 @@
 vich_uploader:
     db_driver: orm
+    storage: flysystem
 
     mappings:
        upload:
            uri_prefix: /upload
-           upload_destination: '%kernel.project_dir%/public/upload'
-        #    inject_on_load: false,
-        #    delete_on_update: true,
-        #    delete_on_remove: true
+           upload_destination: aws.storage
+           inject_on_load: false,
+           delete_on_update: true,
+           delete_on_remove: true

@@ -31,7 +31,7 @@ class Upload
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="upload", fileNameProperty="imageName", size="imageSize")
      *
      */
     private ?File $imageFile = null;

@@ -17,9 +17,9 @@ class UploadType extends AbstractType
         $builder
             ->add('imageFile', VichImageType::class, [
                 'required' => false,
-                // 'allow_delete'=> true,
-                // 'download_uri' => false,
-                // 'image_uri' => false,
+                'allow_delete'=> true,
+                'download_uri' => false,
+                'image_uri' => false,
                 'label' => false
             ])
             ->add('submit', SubmitType::class, [
