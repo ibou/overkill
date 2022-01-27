@@ -42,6 +42,11 @@ class Upload
      */
     private ?int $imageSize = null;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="uploads")
+     */
+    private ?User $uploadBy;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,5 +97,17 @@ class Upload
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function getUploadBy(): ?User
+    {
+        return $this->uploadBy;
+    }
+
+    public function setUploadBy(?User $uploadBy): self
+    {
+        $this->uploadBy = $uploadBy;
+
+        return $this;
     }
 }

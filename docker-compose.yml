@@ -39,8 +39,8 @@ services:
     command: -enable-url-source -mount /mnt/data
 
   rabbitmq:
-    image: rabbitmq:${RABBITMQ_VERSION:-3.7}-management
-    ports: [5672:15672]
+    image: rabbitmq:3.7-management
+    ports: [5672, 15672]
   minio:
     image: minio/minio
     ports:
@@ -56,3 +56,4 @@ volumes:
 ###> doctrine/doctrine-bundle ###
   db-data:
 ###< doctrine/doctrine-bundle ###
+
